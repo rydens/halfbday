@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+import skilstak.colors as c
+import datetime as dt
+import time as t
+import sys
+
+print(c.green + 'Welcome to the half birthday calculator!')
+print()
+print('Birthday, in integers, put a zero if needed:')
+birthyear = input(c.red + 'Year:  ' + c.cyan)
+birthmonth = input(c.red + 'Month: ' + c.cyan)
+birthday = input(c.red + 'Day:   ' + c.cyan)
+
+print(c.green + 'Current Date:  ' + t.strftime("%d/%m/%Y"))
+print('Your Birthday:  ' + birthday + '/' + birthmonth + '/' + birthyear)
+print()
+
+
+d0 = dt.date(int(t.strftime("%Y")), int(t.strftime("%m")), int(t.strftime("%d")))
+d1 = dt.date(int(birthyear), int(birthmonth), int(birthday))
+delta = d0 - d1
+
+print('Days since birth:  ' + str(delta.days))

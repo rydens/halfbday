@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+import skilstak.colors as c
+import datetime as dt
+import time as t
+import sys
+
+customcolor = '\033[0;43m\033[1;34m\033[4;34m'
+
+
+print(c.green + 'Welcome to the half birthday calculator!')
+print()
+print('Birthday, in integers, put a zero if needed:')
+birthmonth = input(c.red + 'Month: ' + c.cyan)
+birthday = input(c.red + 'Day:   ' + c.cyan)
+
+print(c.green + 'Current Date:  ' + c.red + t.strftime("%m") + c.cyan + '/' + c.red + t.strftime("%d"))
+print(c.green + 'Your Birthday:  ' + c.red + birthmonth + c.cyan + '/' + c.red + birthday)
+print(c.green)
+
+y1 = int(t.strftime("%Y"))
+y2 = int(t.strftime("%Y")) - 1
+
+d0 = dt.date(int(y1), int(birthmonth), int(birthday))
+d1 = dt.date(int(y2), int(birthmonth), int(birthday))
+days = d0 - d1
+
+print('Should be "365":')
+print('Days between birthdays:  ' + c.cyan + str(days.days))
+
+
+newdays = d0 - dt.timedelta(days=182)
+print()
+print(c.green + 'Halfday Day:  ' + customcolor + str(newdays) + c.reset)
