@@ -28,6 +28,6 @@ print('Should be "365":')
 print('Days between birthdays:  ' + c.cyan + str(days.days))
 
 
-newdays = d0 - dt.timedelta(days=182)
+newdays = d0 - dt.timedelta(days=182, hours=12)
 print()
 print(c.green + 'Halfday Day:  ' + customcolor + str(newdays) + c.reset)
