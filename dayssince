@@ -4,7 +4,7 @@ import datetime as dt
 import time as t
 import sys
 
-print(c.green + 'Welcome to the half birthday calculator!')
+print(c.green + "How many days since your birth? Let's find out!")
 print()
 print('Birthday, in integers, put a zero if needed:')
 birthyear = input(c.red + 'Year:  ' + c.cyan)
